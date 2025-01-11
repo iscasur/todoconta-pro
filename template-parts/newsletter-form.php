@@ -17,4 +17,4 @@
   </form>
   <p id="subscribe-message" class="text-sm mt-4"></p>
   <p>Te puedes dar de baja cuando quieras. Sin resentimientos. 😊</p>
-</div
+</div>

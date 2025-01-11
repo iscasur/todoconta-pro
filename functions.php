@@ -32,20 +32,18 @@ function tc_register_newsletter_cpt()
 
     register_post_type('newsletter', $args);
 }
-
 add_action('init', 'tc_register_newsletter_cpt');
 
 function tc_enqueue_styles()
 {
     wp_enqueue_style(
         'tailwind',
-        get_template_directory_uri() . '/assets/css/style.css',
+        get_stylesheet_directory_uri() . '/assets/css/style.css',
         array(),
-        filemtime(get_template_directory() . '/assets/css/style.css')
+        filemtime(get_stylesheet_directory()) . '/assets/css/style.css'
     );
 }
-
-// add_action('wp_enqueue_scripts', 'tc_enqueue_styles');
+add_action('wp_enqueue_scripts', 'tc_enqueue_styles');
 
 function tc_tracking_scripts()
 {
