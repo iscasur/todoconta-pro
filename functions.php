@@ -92,6 +92,18 @@ function tc_share_scripts()
 }
 add_action('wp_head', 'tc_share_scripts');
 
+function tc_enqueue_scripts()
+{
+    wp_enqueue_script(
+        'subscribe-script',
+        get_stylesheet_directory_uri() . '/assets/js/sendySubscribe.js',
+        array(),
+        filemtime(get_stylesheet_directory()) . '/assets/js/sendySubscribe.js',
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'tc_enqueue_scripts');
+
 function tc_customize_body_classes($classes) {
     if (is_woocommerce()) {
         $classes = array_filter($classes, function($class) {
