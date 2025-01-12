@@ -1,10 +1,10 @@
-@tailwind base;
+/*@tailwind base;*/
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
     .subscribe-form {
-        @apply bg-gray-100 p-6 rounded-lg mb-6;
+        @apply bg-gray-100 p-6 rounded-lg mb-4;
     }
 
     .subscribe-title {

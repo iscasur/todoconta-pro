@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch:css": "pnpm tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css --watch",
-    "minify:css": "pnpm tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css --minify"
+    "watch:css": "pnpm tailwindcss -i assets/css/component-styles.css -o ./assets/css/style.css --watch",
+    "minify:css": "pnpm tailwindcss -i assets/css/component-styles.css -o ./assets/css/style.css --minify"
   },
   "keywords": [],
   "author": "",
