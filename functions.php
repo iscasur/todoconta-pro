@@ -128,6 +128,18 @@ function tc_insert_subšcription_form($content)
 }
 add_filter('the_content', 'tc_insert_subšcription_form');
 
+function tc_add_share_buttons_after_content($content)
+{
+    if (is_singular('post')) {
+        $share_buttons = '<div class="sharethis-inline-share-buttons dark:text-white mt-12"></div>';
+
+        $content .= $share_buttons;
+    }
+
+    return $content;
+}
+add_filter('the_content', 'tc_add_share_buttons_after_content');
+
 function tc_get_subscribers_count()
 {
     $api_url = 'https://sendy.todoconta.com/api/subscribers/active-subscriber-count.php';
