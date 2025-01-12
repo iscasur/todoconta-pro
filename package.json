@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:css": "pnpm tailwindcss -i assets/css/component-styles.css -o ./assets/css/style.css --watch",
-    "minify:css": "pnpm tailwindcss -i assets/css/component-styles.css -o ./assets/css/style.css --minify"
+    "minify:css": "pnpm tailwindcss -i assets/css/component-styles.css -o ./assets/css/style.css --minify",
+    "bundle": "dir-archiver --src . --dest ../todoconta-pro.zip --exclude --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock ./assets/css/component-styles.css"
   },
   "keywords": [],
   "author": "",
