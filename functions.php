@@ -127,3 +127,24 @@ function tc_insert_subšcription_form($content)
     return $content;
 }
 add_filter('the_content', 'tc_insert_subšcription_form');
+
+function tc_get_subscribers_count()
+{
+    $api_url = 'https://sendy.todoconta.com/api/subscribers/active-subscriber-count.php';
+    $api_key = '5a7Ijeup4Dmx0S3QghQ3';
+    $list_id = 'BuYr892LzE0bp763NocnWz4hxA';
+
+    $response = wp_remote_post($api_url, array(
+        'body' => array(
+            'api_key' => $api_key,
+            'list_id' => $list_id,
+        )
+    ));
+
+    if (is_wp_error($response)) {
+        return 0;
+    }
+
+    $body = wp_remote_retrieve_body($response);
+    return intval($body);
+}
