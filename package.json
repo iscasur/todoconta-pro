@@ -7,9 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:css": "pnpm tailwindcss -i assets/css/component-styles.css -o ./assets/css/style.css --watch",
     "minify:css": "pnpm tailwindcss -i assets/css/component-styles.css -o ./assets/css/style.css --minify",
-    "bundle": "pnpm minify:css && dir-archiver --src . --dest ../todoconta-pro --type directory --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json pnpm-lock.yaml .travis.yml phpcs.xml.dist tailwind.config.js postcss.config.js sass style.css.map yarn.lock ./assets/css/component-styles.css",
-    "bundle:zip": "pnpm minify:css && dir-archiver --src . --dest ../todoconta-pro.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json pnpm-lock.yaml .travis.yml phpcs.xml.dist tailwind.config.js postcss.config.js sass style.css.map yarn.lock ./assets/css/component-styles.css",
-    "deploy": "pnpm minify:css && pnpm bundle && ./deploy.sh"
+    "bundle": "pnpm run minify:css && bash bundle.sh",
+    "bundle:zip": "pnpm minify:css && dir-archiver --src . --dest ../todoconta-pro.zip --exclude .DS_Store .idea .stylelintrc.json .env .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json pnpm-lock.yaml .travis.yml phpcs.xml.dist tailwind.config.js postcss.config.js sass style.css.map yarn.lock ./assets/css/component-styles.css bundle.sh deploy.sh",
+    "deploy": "pnpm run bundle && ./deploy.sh"
   },
   "keywords": [],
   "author": "",

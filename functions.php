@@ -45,6 +45,18 @@ function tc_enqueue_styles()
 }
 add_action('wp_enqueue_scripts', 'tc_enqueue_styles');
 
+function tc_google_adsense_script()
+{
+    if (wp_get_environment_type() === 'production') {
+        // Google Adsense
+        echo "
+        <script async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7144863238088863'
+     crossorigin='anonymous'></script>
+        ";
+    }
+}
+add_action('wp_head', 'tc_google_adsense_script');
+
 function tc_tracking_scripts()
 {
     if (wp_get_environment_type() === 'production') {

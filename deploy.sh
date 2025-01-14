@@ -22,3 +22,5 @@ mirror --reverse --delete --verbose \
 $LOCAL_DIR $REMOTE_DIR;
 bye
 "
+
+rm -rf $LOCAL_DIR

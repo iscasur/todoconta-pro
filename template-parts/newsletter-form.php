@@ -1,8 +1,7 @@
 <div class="subscribe-form">
   <h4 class="subscribe-title">Suscríbete a nuestro boletín</h4>
   <form id="subscribe-form" method="POST">
-    <p class="subscribe-subtitle">Y únete a los <strong><?php echo tc_get_subscribers_count(); ?></strong> que no les
-      gusta perderse lo último en temas de impuestos…</p>
+    <p class="subscribe-subtitle">Y únete a los <strong><?php echo tc_get_subscribers_count(); ?></strong> que ya lo han hecho y no se lo pierden</p>
     <input type="hidden" name="list" value="BuYr892LzE0bp763NocnWz4hxA"/>
     <input type="hidden" name="api_key" value="5a7Ijeup4Dmx0S3QghQ3"/>
     <input type="hidden" name="boolean" value="true"/>
