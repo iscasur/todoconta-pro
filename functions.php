@@ -4,7 +4,7 @@
  * Custom configuration
  */
 
-function tc_register_newsletter_cpt()
+function tc_register_newsletter_cpt(): void
 {
     $labels = array(
         'name' => 'Newsletter',
@@ -34,7 +34,7 @@ function tc_register_newsletter_cpt()
 }
 add_action('init', 'tc_register_newsletter_cpt');
 
-function tc_enqueue_styles()
+function tc_enqueue_styles(): void
 {
     wp_enqueue_style(
         'tailwind',
@@ -45,7 +45,7 @@ function tc_enqueue_styles()
 }
 add_action('wp_enqueue_scripts', 'tc_enqueue_styles');
 
-function tc_google_adsense_script()
+function tc_google_adsense_script(): void
 {
     if (wp_get_environment_type() === 'production') {
         // Google Adsense
@@ -57,7 +57,7 @@ function tc_google_adsense_script()
 }
 add_action('wp_head', 'tc_google_adsense_script');
 
-function tc_tracking_scripts()
+function tc_tracking_scripts(): void
 {
     if (wp_get_environment_type() === 'production') {
         // Google Analytics
@@ -94,7 +94,7 @@ function tc_tracking_scripts()
 }
 add_action('wp_head', 'tc_tracking_scripts');
 
-function tc_share_scripts()
+function tc_share_scripts(): void
 {
     // ShareThis
     echo "
@@ -104,7 +104,7 @@ function tc_share_scripts()
 }
 add_action('wp_head', 'tc_share_scripts');
 
-function tc_enqueue_scripts()
+function tc_enqueue_scripts(): void
 {
     wp_enqueue_script(
         'subscribe-script',
@@ -126,7 +126,7 @@ function tc_customize_body_classes($classes) {
 }
 add_filter('body_class', 'tc_customize_body_classes');
 
-function tc_insert_subšcription_form($content)
+function tc_insert_subscription_form($content)
 {
     ob_start();
     get_template_part('template-parts/newsletter-form');
@@ -152,7 +152,7 @@ function tc_add_share_buttons_after_content($content)
 }
 add_filter('the_content', 'tc_add_share_buttons_after_content');
 
-function tc_get_subscribers_count()
+function tc_get_subscribers_count(): int
 {
     $api_url = 'https://sendy.todoconta.com/api/subscribers/active-subscriber-count.php';
     $api_key = '5a7Ijeup4Dmx0S3QghQ3';
